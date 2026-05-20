@@ -1,0 +1,1526 @@
+{
+  "shelly": {
+    "name": "쉘리",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 4,
+      "gem_grab": 3,
+      "heist": 3,
+      "hot_zone": 3,
+      "knockout": 3
+    },
+    "counters": [
+      "edgar",
+      "mortis",
+      "bull",
+      "el_primo",
+      "fang"
+    ]
+  },
+  "nita": {
+    "name": "니타",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 5,
+      "gem_grab": 2,
+      "heist": 4,
+      "hot_zone": 1,
+      "knockout": 5
+    },
+    "counters": []
+  },
+  "colt": {
+    "name": "콜트",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 4,
+      "gem_grab": 4,
+      "heist": 5,
+      "hot_zone": 3,
+      "knockout": 3
+    },
+    "counters": [
+      "frank",
+      "bull",
+      "rosa",
+      "el_primo",
+      "buster"
+    ]
+  },
+  "bull": {
+    "name": "불",
+    "tiers": {
+      "bounty": 1,
+      "brawl_ball": 4,
+      "gem_grab": 2,
+      "heist": 4,
+      "hot_zone": 4,
+      "knockout": 1
+    },
+    "counters": [
+      "mortis",
+      "edgar",
+      "fang",
+      "buzz",
+      "stu"
+    ]
+  },
+  "brock": {
+    "name": "브록",
+    "tiers": {
+      "bounty": 4,
+      "brawl_ball": 2,
+      "gem_grab": 3,
+      "heist": 2,
+      "hot_zone": 2,
+      "knockout": 4
+    },
+    "counters": [
+      "8bit",
+      "tick",
+      "pam",
+      "bo",
+      "crow"
+    ]
+  },
+  "el_primo": {
+    "name": "엘 프리모",
+    "tiers": {
+      "bounty": 1,
+      "brawl_ball": 5,
+      "gem_grab": 2,
+      "heist": 3,
+      "hot_zone": 4,
+      "knockout": 1
+    },
+    "counters": [
+      "mortis",
+      "edgar",
+      "fang",
+      "buzz",
+      "stu"
+    ]
+  },
+  "barley": {
+    "name": "발리",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 5,
+      "gem_grab": 2,
+      "heist": 4,
+      "hot_zone": 1,
+      "knockout": 5
+    },
+    "counters": []
+  },
+  "poco": {
+    "name": "포코",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 4,
+      "gem_grab": 4,
+      "heist": 2,
+      "hot_zone": 4,
+      "knockout": 3
+    },
+    "counters": [
+      "edgar",
+      "mortis",
+      "fang",
+      "crow",
+      "leon"
+    ]
+  },
+  "rosa": {
+    "name": "로사",
+    "tiers": {
+      "bounty": 1,
+      "brawl_ball": 4,
+      "gem_grab": 2,
+      "heist": 3,
+      "hot_zone": 4,
+      "knockout": 1
+    },
+    "counters": [
+      "mortis",
+      "edgar",
+      "fang",
+      "buzz",
+      "stu"
+    ]
+  },
+  "jessie": {
+    "name": "제시",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 4,
+      "gem_grab": 4,
+      "heist": 2,
+      "hot_zone": 5,
+      "knockout": 3
+    },
+    "counters": [
+      "edgar",
+      "mortis",
+      "fang",
+      "crow",
+      "leon"
+    ]
+  },
+  "dynamike": {
+    "name": "다이너마이크",
+    "tiers": {
+      "bounty": 2,
+      "brawl_ball": 4,
+      "gem_grab": 1,
+      "heist": 3,
+      "hot_zone": 5,
+      "knockout": 4
+    },
+    "counters": []
+  },
+  "tick": {
+    "name": "틱",
+    "tiers": {
+      "bounty": 4,
+      "brawl_ball": 2,
+      "gem_grab": 3,
+      "heist": 2,
+      "hot_zone": 2,
+      "knockout": 4
+    },
+    "counters": [
+      "8bit",
+      "tick",
+      "pam",
+      "bo",
+      "crow"
+    ]
+  },
+  "8bit": {
+    "name": "8비트",
+    "tiers": {
+      "bounty": 4,
+      "brawl_ball": 1,
+      "gem_grab": 3,
+      "heist": 5,
+      "hot_zone": 2,
+      "knockout": 1
+    },
+    "counters": []
+  },
+  "rico": {
+    "name": "리코",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 4,
+      "gem_grab": 4,
+      "heist": 5,
+      "hot_zone": 3,
+      "knockout": 3
+    },
+    "counters": [
+      "frank",
+      "bull",
+      "rosa",
+      "el_primo",
+      "buster"
+    ]
+  },
+  "darryl": {
+    "name": "대릴",
+    "tiers": {
+      "bounty": 1,
+      "brawl_ball": 4,
+      "gem_grab": 2,
+      "heist": 4,
+      "hot_zone": 4,
+      "knockout": 1
+    },
+    "counters": [
+      "mortis",
+      "edgar",
+      "fang",
+      "buzz",
+      "stu"
+    ]
+  },
+  "penny": {
+    "name": "페니",
+    "tiers": {
+      "bounty": 2,
+      "brawl_ball": 4,
+      "gem_grab": 1,
+      "heist": 3,
+      "hot_zone": 5,
+      "knockout": 4
+    },
+    "counters": []
+  },
+  "carl": {
+    "name": "칼",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 5,
+      "gem_grab": 2,
+      "heist": 4,
+      "hot_zone": 1,
+      "knockout": 5
+    },
+    "counters": []
+  },
+  "jacky": {
+    "name": "재키",
+    "tiers": {
+      "bounty": 1,
+      "brawl_ball": 4,
+      "gem_grab": 2,
+      "heist": 3,
+      "hot_zone": 4,
+      "knockout": 1
+    },
+    "counters": [
+      "mortis",
+      "edgar",
+      "fang",
+      "buzz",
+      "stu"
+    ]
+  },
+  "gus": {
+    "name": "거스",
+    "tiers": {
+      "bounty": 5,
+      "brawl_ball": 2,
+      "gem_grab": 4,
+      "heist": 1,
+      "hot_zone": 3,
+      "knockout": 2
+    },
+    "counters": []
+  },
+  "bo": {
+    "name": "보",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 4,
+      "gem_grab": 4,
+      "heist": 2,
+      "hot_zone": 4,
+      "knockout": 3
+    },
+    "counters": [
+      "edgar",
+      "mortis",
+      "fang",
+      "crow",
+      "leon"
+    ]
+  },
+  "emz": {
+    "name": "엠즈",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 4,
+      "gem_grab": 4,
+      "heist": 2,
+      "hot_zone": 5,
+      "knockout": 3
+    },
+    "counters": [
+      "edgar",
+      "mortis",
+      "fang",
+      "crow",
+      "leon"
+    ]
+  },
+  "stu": {
+    "name": "스튜",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 5,
+      "gem_grab": 2,
+      "heist": 4,
+      "hot_zone": 1,
+      "knockout": 5
+    },
+    "counters": []
+  },
+  "piper": {
+    "name": "파이퍼",
+    "tiers": {
+      "bounty": 5,
+      "brawl_ball": 2,
+      "gem_grab": 3,
+      "heist": 2,
+      "hot_zone": 2,
+      "knockout": 5
+    },
+    "counters": [
+      "8bit",
+      "tick",
+      "pam",
+      "bo",
+      "crow"
+    ]
+  },
+  "pam": {
+    "name": "팸",
+    "tiers": {
+      "bounty": 5,
+      "brawl_ball": 2,
+      "gem_grab": 4,
+      "heist": 1,
+      "hot_zone": 3,
+      "knockout": 2
+    },
+    "counters": []
+  },
+  "frank": {
+    "name": "프랭크",
+    "tiers": {
+      "bounty": 1,
+      "brawl_ball": 5,
+      "gem_grab": 2,
+      "heist": 3,
+      "hot_zone": 4,
+      "knockout": 1
+    },
+    "counters": [
+      "mortis",
+      "edgar",
+      "fang",
+      "buzz",
+      "stu"
+    ]
+  },
+  "bibi": {
+    "name": "비비",
+    "tiers": {
+      "bounty": 2,
+      "brawl_ball": 4,
+      "gem_grab": 1,
+      "heist": 3,
+      "hot_zone": 5,
+      "knockout": 4
+    },
+    "counters": []
+  },
+  "bea": {
+    "name": "비",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 5,
+      "gem_grab": 2,
+      "heist": 4,
+      "hot_zone": 1,
+      "knockout": 5
+    },
+    "counters": []
+  },
+  "nani": {
+    "name": "나니",
+    "tiers": {
+      "bounty": 5,
+      "brawl_ball": 2,
+      "gem_grab": 3,
+      "heist": 2,
+      "hot_zone": 2,
+      "knockout": 4
+    },
+    "counters": [
+      "8bit",
+      "tick",
+      "pam",
+      "bo",
+      "crow"
+    ]
+  },
+  "edgar": {
+    "name": "에드거",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 4,
+      "gem_grab": 4,
+      "heist": 2,
+      "hot_zone": 2,
+      "knockout": 3
+    },
+    "counters": [
+      "piper",
+      "dynamike",
+      "tick",
+      "squeak",
+      "brock"
+    ]
+  },
+  "griff": {
+    "name": "그리프",
+    "tiers": {
+      "bounty": 1,
+      "brawl_ball": 3,
+      "gem_grab": 5,
+      "heist": 2,
+      "hot_zone": 4,
+      "knockout": 3
+    },
+    "counters": []
+  },
+  "grom": {
+    "name": "그롬",
+    "tiers": {
+      "bounty": 2,
+      "brawl_ball": 4,
+      "gem_grab": 1,
+      "heist": 3,
+      "hot_zone": 5,
+      "knockout": 4
+    },
+    "counters": []
+  },
+  "bonnie": {
+    "name": "보니",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 5,
+      "gem_grab": 2,
+      "heist": 4,
+      "hot_zone": 1,
+      "knockout": 5
+    },
+    "counters": []
+  },
+  "gale": {
+    "name": "게일",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 4,
+      "gem_grab": 4,
+      "heist": 2,
+      "hot_zone": 4,
+      "knockout": 3
+    },
+    "counters": [
+      "edgar",
+      "mortis",
+      "fang",
+      "crow",
+      "leon"
+    ]
+  },
+  "colette": {
+    "name": "콜레트",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 4,
+      "gem_grab": 4,
+      "heist": 5,
+      "hot_zone": 3,
+      "knockout": 3
+    },
+    "counters": [
+      "frank",
+      "bull",
+      "rosa",
+      "el_primo",
+      "buster"
+    ]
+  },
+  "belle": {
+    "name": "벨",
+    "tiers": {
+      "bounty": 4,
+      "brawl_ball": 2,
+      "gem_grab": 3,
+      "heist": 2,
+      "hot_zone": 2,
+      "knockout": 4
+    },
+    "counters": [
+      "8bit",
+      "tick",
+      "pam",
+      "bo",
+      "crow"
+    ]
+  },
+  "ash": {
+    "name": "애쉬",
+    "tiers": {
+      "bounty": 2,
+      "brawl_ball": 4,
+      "gem_grab": 1,
+      "heist": 3,
+      "hot_zone": 5,
+      "knockout": 4
+    },
+    "counters": []
+  },
+  "lola": {
+    "name": "롤라",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 5,
+      "gem_grab": 2,
+      "heist": 4,
+      "hot_zone": 1,
+      "knockout": 5
+    },
+    "counters": []
+  },
+  "sam": {
+    "name": "샘",
+    "tiers": {
+      "bounty": 1,
+      "brawl_ball": 4,
+      "gem_grab": 2,
+      "heist": 3,
+      "hot_zone": 4,
+      "knockout": 1
+    },
+    "counters": [
+      "mortis",
+      "edgar",
+      "fang",
+      "buzz",
+      "stu"
+    ]
+  },
+  "mandy": {
+    "name": "맨디",
+    "tiers": {
+      "bounty": 4,
+      "brawl_ball": 2,
+      "gem_grab": 3,
+      "heist": 2,
+      "hot_zone": 2,
+      "knockout": 4
+    },
+    "counters": [
+      "8bit",
+      "tick",
+      "pam",
+      "bo",
+      "crow"
+    ]
+  },
+  "maisie": {
+    "name": "메이지",
+    "tiers": {
+      "bounty": 1,
+      "brawl_ball": 3,
+      "gem_grab": 5,
+      "heist": 2,
+      "hot_zone": 4,
+      "knockout": 3
+    },
+    "counters": []
+  },
+  "hank": {
+    "name": "행크",
+    "tiers": {
+      "bounty": 1,
+      "brawl_ball": 4,
+      "gem_grab": 2,
+      "heist": 3,
+      "hot_zone": 4,
+      "knockout": 1
+    },
+    "counters": [
+      "mortis",
+      "edgar",
+      "fang",
+      "buzz",
+      "stu"
+    ]
+  },
+  "pearl": {
+    "name": "펄",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 4,
+      "gem_grab": 4,
+      "heist": 5,
+      "hot_zone": 3,
+      "knockout": 3
+    },
+    "counters": [
+      "frank",
+      "bull",
+      "rosa",
+      "el_primo",
+      "buster"
+    ]
+  },
+  "larry_lawrie": {
+    "name": "래리 & 로리",
+    "tiers": {
+      "bounty": 4,
+      "brawl_ball": 1,
+      "gem_grab": 3,
+      "heist": 5,
+      "hot_zone": 2,
+      "knockout": 1
+    },
+    "counters": []
+  },
+  "angelo": {
+    "name": "안젤로",
+    "tiers": {
+      "bounty": 5,
+      "brawl_ball": 2,
+      "gem_grab": 3,
+      "heist": 2,
+      "hot_zone": 2,
+      "knockout": 5
+    },
+    "counters": [
+      "8bit",
+      "tick",
+      "pam",
+      "bo",
+      "crow"
+    ]
+  },
+  "berry": {
+    "name": "베리",
+    "tiers": {
+      "bounty": 1,
+      "brawl_ball": 3,
+      "gem_grab": 5,
+      "heist": 2,
+      "hot_zone": 4,
+      "knockout": 3
+    },
+    "counters": []
+  },
+  "shade": {
+    "name": "셰이드",
+    "tiers": {
+      "bounty": 2,
+      "brawl_ball": 4,
+      "gem_grab": 1,
+      "heist": 3,
+      "hot_zone": 5,
+      "knockout": 4
+    },
+    "counters": []
+  },
+  "meeple": {
+    "name": "미플",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 5,
+      "gem_grab": 2,
+      "heist": 4,
+      "hot_zone": 1,
+      "knockout": 5
+    },
+    "counters": []
+  },
+  "trunk": {
+    "name": "트렁크",
+    "tiers": {
+      "bounty": 4,
+      "brawl_ball": 1,
+      "gem_grab": 3,
+      "heist": 5,
+      "hot_zone": 2,
+      "knockout": 1
+    },
+    "counters": []
+  },
+  "volt": {
+    "name": "볼트",
+    "tiers": {
+      "bounty": 5,
+      "brawl_ball": 2,
+      "gem_grab": 4,
+      "heist": 1,
+      "hot_zone": 3,
+      "knockout": 2
+    },
+    "counters": []
+  },
+  "mortis": {
+    "name": "모티스",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 4,
+      "gem_grab": 4,
+      "heist": 2,
+      "hot_zone": 2,
+      "knockout": 4
+    },
+    "counters": [
+      "piper",
+      "dynamike",
+      "tick",
+      "squeak",
+      "brock"
+    ]
+  },
+  "tara": {
+    "name": "타라",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 4,
+      "gem_grab": 4,
+      "heist": 2,
+      "hot_zone": 4,
+      "knockout": 3
+    },
+    "counters": [
+      "edgar",
+      "mortis",
+      "fang",
+      "crow",
+      "leon"
+    ]
+  },
+  "gene": {
+    "name": "진",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 4,
+      "gem_grab": 5,
+      "heist": 2,
+      "hot_zone": 4,
+      "knockout": 3
+    },
+    "counters": [
+      "edgar",
+      "mortis",
+      "fang",
+      "crow",
+      "leon"
+    ]
+  },
+  "max": {
+    "name": "맥스",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 4,
+      "gem_grab": 4,
+      "heist": 2,
+      "hot_zone": 4,
+      "knockout": 3
+    },
+    "counters": [
+      "edgar",
+      "mortis",
+      "fang",
+      "crow",
+      "leon"
+    ]
+  },
+  "mr_p": {
+    "name": "미스터 P",
+    "tiers": {
+      "bounty": 5,
+      "brawl_ball": 2,
+      "gem_grab": 4,
+      "heist": 1,
+      "hot_zone": 3,
+      "knockout": 2
+    },
+    "counters": []
+  },
+  "sprout": {
+    "name": "스프라우트",
+    "tiers": {
+      "bounty": 4,
+      "brawl_ball": 2,
+      "gem_grab": 3,
+      "heist": 2,
+      "hot_zone": 2,
+      "knockout": 4
+    },
+    "counters": [
+      "8bit",
+      "tick",
+      "pam",
+      "bo",
+      "crow"
+    ]
+  },
+  "byron": {
+    "name": "바이런",
+    "tiers": {
+      "bounty": 4,
+      "brawl_ball": 2,
+      "gem_grab": 3,
+      "heist": 2,
+      "hot_zone": 2,
+      "knockout": 4
+    },
+    "counters": [
+      "8bit",
+      "tick",
+      "pam",
+      "bo",
+      "crow"
+    ]
+  },
+  "squeak": {
+    "name": "스퀴크",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 5,
+      "gem_grab": 2,
+      "heist": 4,
+      "hot_zone": 1,
+      "knockout": 5
+    },
+    "counters": []
+  },
+  "lou": {
+    "name": "루",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 4,
+      "gem_grab": 4,
+      "heist": 2,
+      "hot_zone": 5,
+      "knockout": 3
+    },
+    "counters": [
+      "edgar",
+      "mortis",
+      "fang",
+      "crow",
+      "leon"
+    ]
+  },
+  "ruffs": {
+    "name": "러프스",
+    "tiers": {
+      "bounty": 5,
+      "brawl_ball": 2,
+      "gem_grab": 4,
+      "heist": 1,
+      "hot_zone": 3,
+      "knockout": 2
+    },
+    "counters": []
+  },
+  "buzz": {
+    "name": "버즈",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 4,
+      "gem_grab": 4,
+      "heist": 2,
+      "hot_zone": 2,
+      "knockout": 3
+    },
+    "counters": [
+      "piper",
+      "dynamike",
+      "tick",
+      "squeak",
+      "brock"
+    ]
+  },
+  "fang": {
+    "name": "팽",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 4,
+      "gem_grab": 4,
+      "heist": 2,
+      "hot_zone": 2,
+      "knockout": 3
+    },
+    "counters": [
+      "piper",
+      "dynamike",
+      "tick",
+      "squeak",
+      "brock"
+    ]
+  },
+  "eve": {
+    "name": "이브",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 5,
+      "gem_grab": 2,
+      "heist": 4,
+      "hot_zone": 1,
+      "knockout": 5
+    },
+    "counters": []
+  },
+  "janet": {
+    "name": "자넷",
+    "tiers": {
+      "bounty": 4,
+      "brawl_ball": 1,
+      "gem_grab": 3,
+      "heist": 5,
+      "hot_zone": 2,
+      "knockout": 1
+    },
+    "counters": []
+  },
+  "otis": {
+    "name": "오티스",
+    "tiers": {
+      "bounty": 5,
+      "brawl_ball": 2,
+      "gem_grab": 4,
+      "heist": 1,
+      "hot_zone": 3,
+      "knockout": 2
+    },
+    "counters": []
+  },
+  "buster": {
+    "name": "버스터",
+    "tiers": {
+      "bounty": 1,
+      "brawl_ball": 5,
+      "gem_grab": 2,
+      "heist": 3,
+      "hot_zone": 4,
+      "knockout": 1
+    },
+    "counters": [
+      "mortis",
+      "edgar",
+      "fang",
+      "buzz",
+      "stu"
+    ]
+  },
+  "gray": {
+    "name": "그레이",
+    "tiers": {
+      "bounty": 2,
+      "brawl_ball": 4,
+      "gem_grab": 1,
+      "heist": 3,
+      "hot_zone": 5,
+      "knockout": 4
+    },
+    "counters": []
+  },
+  "rt": {
+    "name": "R-T",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 5,
+      "gem_grab": 2,
+      "heist": 4,
+      "hot_zone": 1,
+      "knockout": 5
+    },
+    "counters": []
+  },
+  "willow": {
+    "name": "윌로우",
+    "tiers": {
+      "bounty": 4,
+      "brawl_ball": 1,
+      "gem_grab": 3,
+      "heist": 5,
+      "hot_zone": 2,
+      "knockout": 1
+    },
+    "counters": []
+  },
+  "doug": {
+    "name": "더그",
+    "tiers": {
+      "bounty": 1,
+      "brawl_ball": 4,
+      "gem_grab": 2,
+      "heist": 3,
+      "hot_zone": 4,
+      "knockout": 1
+    },
+    "counters": [
+      "mortis",
+      "edgar",
+      "fang",
+      "buzz",
+      "stu"
+    ]
+  },
+  "chuck": {
+    "name": "척",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 4,
+      "gem_grab": 4,
+      "heist": 5,
+      "hot_zone": 3,
+      "knockout": 3
+    },
+    "counters": [
+      "frank",
+      "bull",
+      "rosa",
+      "el_primo",
+      "buster"
+    ]
+  },
+  "charlie": {
+    "name": "찰리",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 4,
+      "gem_grab": 5,
+      "heist": 2,
+      "hot_zone": 4,
+      "knockout": 3
+    },
+    "counters": [
+      "edgar",
+      "mortis",
+      "fang",
+      "crow",
+      "leon"
+    ]
+  },
+  "mico": {
+    "name": "미코",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 4,
+      "gem_grab": 4,
+      "heist": 2,
+      "hot_zone": 2,
+      "knockout": 3
+    },
+    "counters": [
+      "piper",
+      "dynamike",
+      "tick",
+      "squeak",
+      "brock"
+    ]
+  },
+  "melody": {
+    "name": "멜로디",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 4,
+      "gem_grab": 4,
+      "heist": 5,
+      "hot_zone": 3,
+      "knockout": 3
+    },
+    "counters": [
+      "frank",
+      "bull",
+      "rosa",
+      "el_primo",
+      "buster"
+    ]
+  },
+  "lily": {
+    "name": "릴리",
+    "tiers": {
+      "bounty": 5,
+      "brawl_ball": 2,
+      "gem_grab": 4,
+      "heist": 1,
+      "hot_zone": 3,
+      "knockout": 2
+    },
+    "counters": []
+  },
+  "clancy": {
+    "name": "클랜시",
+    "tiers": {
+      "bounty": 1,
+      "brawl_ball": 3,
+      "gem_grab": 5,
+      "heist": 2,
+      "hot_zone": 4,
+      "knockout": 3
+    },
+    "counters": []
+  },
+  "moe": {
+    "name": "모",
+    "tiers": {
+      "bounty": 2,
+      "brawl_ball": 4,
+      "gem_grab": 1,
+      "heist": 3,
+      "hot_zone": 5,
+      "knockout": 4
+    },
+    "counters": []
+  },
+  "juju": {
+    "name": "주주",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 5,
+      "gem_grab": 2,
+      "heist": 4,
+      "hot_zone": 1,
+      "knockout": 5
+    },
+    "counters": []
+  },
+  "ollie": {
+    "name": "올리",
+    "tiers": {
+      "bounty": 4,
+      "brawl_ball": 1,
+      "gem_grab": 3,
+      "heist": 5,
+      "hot_zone": 2,
+      "knockout": 1
+    },
+    "counters": []
+  },
+  "pinkcess": {
+    "name": "핑크스",
+    "tiers": {
+      "bounty": 5,
+      "brawl_ball": 2,
+      "gem_grab": 4,
+      "heist": 1,
+      "hot_zone": 3,
+      "knockout": 2
+    },
+    "counters": []
+  },
+  "lumi": {
+    "name": "루미",
+    "tiers": {
+      "bounty": 1,
+      "brawl_ball": 3,
+      "gem_grab": 5,
+      "heist": 2,
+      "hot_zone": 4,
+      "knockout": 3
+    },
+    "counters": []
+  },
+  "jaeyong": {
+    "name": "재용",
+    "tiers": {
+      "bounty": 2,
+      "brawl_ball": 4,
+      "gem_grab": 1,
+      "heist": 3,
+      "hot_zone": 5,
+      "knockout": 4
+    },
+    "counters": []
+  },
+  "ali": {
+    "name": "알리",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 5,
+      "gem_grab": 2,
+      "heist": 4,
+      "hot_zone": 1,
+      "knockout": 5
+    },
+    "counters": []
+  },
+  "mina": {
+    "name": "미나",
+    "tiers": {
+      "bounty": 4,
+      "brawl_ball": 1,
+      "gem_grab": 3,
+      "heist": 5,
+      "hot_zone": 2,
+      "knockout": 1
+    },
+    "counters": []
+  },
+  "jigi": {
+    "name": "지기",
+    "tiers": {
+      "bounty": 5,
+      "brawl_ball": 2,
+      "gem_grab": 4,
+      "heist": 1,
+      "hot_zone": 3,
+      "knockout": 2
+    },
+    "counters": []
+  },
+  "jiji": {
+    "name": "지지",
+    "tiers": {
+      "bounty": 1,
+      "brawl_ball": 3,
+      "gem_grab": 5,
+      "heist": 2,
+      "hot_zone": 4,
+      "knockout": 3
+    },
+    "counters": []
+  },
+  "glowi": {
+    "name": "글로리",
+    "tiers": {
+      "bounty": 2,
+      "brawl_ball": 4,
+      "gem_grab": 1,
+      "heist": 3,
+      "hot_zone": 5,
+      "knockout": 4
+    },
+    "counters": []
+  },
+  "nazia": {
+    "name": "나지아",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 5,
+      "gem_grab": 2,
+      "heist": 4,
+      "hot_zone": 1,
+      "knockout": 5
+    },
+    "counters": []
+  },
+  "demian": {
+    "name": "데미안",
+    "tiers": {
+      "bounty": 4,
+      "brawl_ball": 1,
+      "gem_grab": 3,
+      "heist": 5,
+      "hot_zone": 2,
+      "knockout": 1
+    },
+    "counters": []
+  },
+  "star_nova": {
+    "name": "스타 노바",
+    "tiers": {
+      "bounty": 5,
+      "brawl_ball": 2,
+      "gem_grab": 4,
+      "heist": 1,
+      "hot_zone": 3,
+      "knockout": 2
+    },
+    "counters": []
+  },
+  "crow": {
+    "name": "크로우",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 4,
+      "gem_grab": 4,
+      "heist": 2,
+      "hot_zone": 2,
+      "knockout": 3
+    },
+    "counters": [
+      "piper",
+      "dynamike",
+      "tick",
+      "squeak",
+      "brock"
+    ]
+  },
+  "leon": {
+    "name": "레온",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 4,
+      "gem_grab": 4,
+      "heist": 2,
+      "hot_zone": 2,
+      "knockout": 4
+    },
+    "counters": [
+      "piper",
+      "dynamike",
+      "tick",
+      "squeak",
+      "brock"
+    ]
+  },
+  "spike": {
+    "name": "스파이크",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 4,
+      "gem_grab": 4,
+      "heist": 5,
+      "hot_zone": 3,
+      "knockout": 3
+    },
+    "counters": [
+      "frank",
+      "bull",
+      "rosa",
+      "el_primo",
+      "buster"
+    ]
+  },
+  "sandy": {
+    "name": "샌디",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 4,
+      "gem_grab": 5,
+      "heist": 2,
+      "hot_zone": 5,
+      "knockout": 3
+    },
+    "counters": [
+      "edgar",
+      "mortis",
+      "fang",
+      "crow",
+      "leon"
+    ]
+  },
+  "amber": {
+    "name": "앰버",
+    "tiers": {
+      "bounty": 5,
+      "brawl_ball": 2,
+      "gem_grab": 4,
+      "heist": 1,
+      "hot_zone": 3,
+      "knockout": 2
+    },
+    "counters": []
+  },
+  "meg": {
+    "name": "메그",
+    "tiers": {
+      "bounty": 1,
+      "brawl_ball": 3,
+      "gem_grab": 5,
+      "heist": 2,
+      "hot_zone": 4,
+      "knockout": 3
+    },
+    "counters": []
+  },
+  "surge": {
+    "name": "서지",
+    "tiers": {
+      "bounty": 2,
+      "brawl_ball": 4,
+      "gem_grab": 1,
+      "heist": 3,
+      "hot_zone": 5,
+      "knockout": 4
+    },
+    "counters": []
+  },
+  "chester": {
+    "name": "체스터",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 5,
+      "gem_grab": 2,
+      "heist": 4,
+      "hot_zone": 1,
+      "knockout": 5
+    },
+    "counters": []
+  },
+  "cordelius": {
+    "name": "코델리우스",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 4,
+      "gem_grab": 4,
+      "heist": 5,
+      "hot_zone": 3,
+      "knockout": 3
+    },
+    "counters": [
+      "frank",
+      "bull",
+      "rosa",
+      "el_primo",
+      "buster"
+    ]
+  },
+  "kit": {
+    "name": "키트",
+    "tiers": {
+      "bounty": 5,
+      "brawl_ball": 2,
+      "gem_grab": 4,
+      "heist": 1,
+      "hot_zone": 3,
+      "knockout": 2
+    },
+    "counters": []
+  },
+  "draco": {
+    "name": "드라코",
+    "tiers": {
+      "bounty": 1,
+      "brawl_ball": 3,
+      "gem_grab": 5,
+      "heist": 2,
+      "hot_zone": 4,
+      "knockout": 3
+    },
+    "counters": []
+  },
+  "kenji": {
+    "name": "켄지",
+    "tiers": {
+      "bounty": 2,
+      "brawl_ball": 4,
+      "gem_grab": 1,
+      "heist": 3,
+      "hot_zone": 5,
+      "knockout": 4
+    },
+    "counters": []
+  },
+  "pierce": {
+    "name": "피어스",
+    "tiers": {
+      "bounty": 3,
+      "brawl_ball": 5,
+      "gem_grab": 2,
+      "heist": 4,
+      "hot_zone": 1,
+      "knockout": 5
+    },
+    "counters": []
+  },
+  "kaze": {
+    "name": "카제",
+    "tiers": {
+      "bounty": 4,
+      "brawl_ball": 1,
+      "gem_grab": 3,
+      "heist": 5,
+      "hot_zone": 2,
+      "knockout": 1
+    },
+    "counters": []
+  },
+  "sirius": {
+    "name": "시리우스",
+    "tiers": {
+      "bounty": 5,
+      "brawl_ball": 2,
+      "gem_grab": 4,
+      "heist": 1,
+      "hot_zone": 3,
+      "knockout": 2
+    },
+    "counters": []
+  }
+}

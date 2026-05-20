@@ -1,102 +1,66 @@
-import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React from 'react';
 import {
-  FlatList,
+  SafeAreaView,
+  ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from 'react-native';
-import modes from '../data/modes.json';
-import { useHistoryStore } from '../store/historyStore';
-import { useSessionStore } from '../store/sessionStore';
-import type { RootStackParamList } from '../../App';
 
-type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
+const MODES = [
+  { id: 'bounty',     name: '바운티',  emoji: '⭐' },
+  { id: 'brawl_ball', name: '브롤 볼', emoji: '⚽' },
+  { id: 'gem_grab',   name: '젬 그랩', emoji: '💎' },
+  { id: 'heist',      name: '하이스트', emoji: '🏦' },
+  { id: 'hot_zone',   name: '핫 존',   emoji: '🔥' },
+  { id: 'knockout',   name: '녹아웃',  emoji: '🥊' },
+];
 
-export default function HomeScreen({ navigation }: Props) {
-  const { sessions } = useHistoryStore();
-  const { startSession } = useSessionStore();
+interface Props {
+  onSelectMode: (modeName: string) => void;
+}
 
-  function handleModeSelect(modeId: string) {
-    startSession(modeId);
-    navigation.navigate('BanPick', { mode: modeId });
-  }
-
+export default function HomeScreen({ onSelectMode }: Props) {
   return (
-    <View style={styles.container}>
-      <Text style={styles.sectionTitle}>모드 선택</Text>
-      <FlatList
-        data={modes}
-        numColumns={2}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <TouchableOpacity
-            style={styles.modeCard}
-            onPress={() => handleModeSelect(item.id)}
-          >
-            <Text style={styles.modeEmoji}>{item.emoji}</Text>
-            <Text style={styles.modeName}>{item.name}</Text>
-          </TouchableOpacity>
-        )}
-        contentContainerStyle={styles.grid}
-      />
-
-      <View style={styles.row}>
-        <Text style={styles.sectionTitle}>최근 세션</Text>
-        <TouchableOpacity onPress={() => navigation.navigate('TierList')}>
-          <Text style={styles.tierLink}>티어리스트 →</Text>
-        </TouchableOpacity>
-      </View>
-
-      {sessions.length === 0 ? (
-        <Text style={styles.empty}>아직 세션 기록이 없습니다.</Text>
-      ) : (
-        <FlatList
-          data={sessions.slice(0, 5)}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => (
+    <SafeAreaView style={styles.safe}>
+      <ScrollView contentContainerStyle={styles.content}>
+        <Text style={styles.title}>🎮 브롤 밴픽</Text>
+        <Text style={styles.sub}>경쟁전 모드를 선택하세요</Text>
+        <View style={styles.grid}>
+          {MODES.map((mode) => (
             <TouchableOpacity
-              style={styles.historyItem}
-              onPress={() => navigation.navigate('Result', { sessionId: item.id })}
+              key={mode.id}
+              style={styles.card}
+              onPress={() => onSelectMode(mode.name)}
+              activeOpacity={0.75}
             >
-              <Text style={styles.historyMode}>{item.mode}</Text>
-              <Text style={styles.historyInfo}>
-                밴 {item.bans.length}개 · 픽 {item.picks.length}개
-              </Text>
+              <Text style={styles.emoji}>{mode.emoji}</Text>
+              <Text style={styles.name}>{mode.name}</Text>
             </TouchableOpacity>
-          )}
-        />
-      )}
-    </View>
+          ))}
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 16 },
-  sectionTitle: { color: '#fff', fontSize: 18, fontWeight: 'bold', marginBottom: 12 },
-  grid: { gap: 12, paddingBottom: 16 },
-  modeCard: {
-    flex: 1,
-    margin: 4,
+  safe: { flex: 1, backgroundColor: '#16213e' },
+  content: { padding: 20, paddingTop: 40 },
+  title: { color: '#fff', fontSize: 26, fontWeight: 'bold', marginBottom: 6 },
+  sub: { color: '#8899bb', fontSize: 14, marginBottom: 24 },
+  grid: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' },
+  card: {
+    width: '48%',
     backgroundColor: '#0f3460',
-    borderRadius: 12,
-    padding: 20,
+    borderRadius: 14,
+    paddingVertical: 26,
     alignItems: 'center',
+    marginBottom: 14,
+    borderWidth: 1,
+    borderColor: '#1a4a80',
   },
-  modeEmoji: { fontSize: 32, marginBottom: 8 },
-  modeName: { color: '#fff', fontSize: 14, fontWeight: '600' },
-  row: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 },
-  tierLink: { color: '#e94560', fontSize: 14 },
-  empty: { color: '#888', textAlign: 'center', marginTop: 20 },
-  historyItem: {
-    backgroundColor: '#0f3460',
-    borderRadius: 8,
-    padding: 12,
-    marginBottom: 8,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  historyMode: { color: '#fff', fontWeight: '600' },
-  historyInfo: { color: '#aaa', fontSize: 12 },
+  emoji: { fontSize: 38, marginBottom: 10 },
+  name: { color: '#fff', fontSize: 15, fontWeight: '600' },
 });
