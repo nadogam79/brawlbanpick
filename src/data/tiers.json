@@ -1,0 +1,50 @@
+{
+  "gem_grab": {
+    "S": ["poco", "gene", "max", "tara", "sandy"],
+    "A": ["sprout", "barley", "tick", "bo", "gus", "pam"],
+    "B": ["nita", "jessie", "penny", "emz", "mr_p"],
+    "C": ["shelly", "colt", "bull", "brock", "el_primo"]
+  },
+  "brawl_ball": {
+    "S": ["frank", "rosa", "bibi", "el_primo", "bull"],
+    "A": ["mortis", "max", "buzz", "fang", "sam"],
+    "B": ["stu", "edgar", "ash", "pam", "surge"],
+    "C": ["shelly", "colt", "carl", "jacky", "8_bit"]
+  },
+  "heist": {
+    "S": ["colt", "brock", "belle", "mandy", "piper"],
+    "A": ["dynamike", "barley", "tick", "sprout", "griff"],
+    "B": ["grom", "squeak", "penny", "8_bit", "surge"],
+    "C": ["frank", "bull", "rosa", "jacky", "el_primo"]
+  },
+  "bounty": {
+    "S": ["piper", "belle", "bea", "nani", "mandy"],
+    "A": ["bo", "colt", "brock", "crow", "spike"],
+    "B": ["emz", "tara", "leon", "amber", "maisie"],
+    "C": ["shelly", "frank", "rosa", "el_primo", "bull"]
+  },
+  "hot_zone": {
+    "S": ["emz", "barley", "sprout", "tick", "penny"],
+    "A": ["sandy", "tara", "gene", "max", "poco"],
+    "B": ["ruffs", "8_bit", "pam", "griff", "gus"],
+    "C": ["colt", "brock", "nani", "mandy", "belle"]
+  },
+  "knockout": {
+    "S": ["piper", "belle", "bea", "nani", "spike"],
+    "A": ["crow", "leon", "mortis", "edgar", "buzz"],
+    "B": ["bo", "colt", "brock", "amber", "mandy"],
+    "C": ["frank", "bull", "rosa", "jacky", "el_primo"]
+  },
+  "wipeout": {
+    "S": ["colt", "brock", "belle", "piper", "amber"],
+    "A": ["spike", "crow", "leon", "bo", "emz"],
+    "B": ["nani", "mandy", "maisie", "8_bit", "surge"],
+    "C": ["frank", "bull", "rosa", "el_primo", "jacky"]
+  },
+  "payload": {
+    "S": ["frank", "rosa", "poco", "pam", "gene"],
+    "A": ["max", "tara", "sandy", "sprout", "barley"],
+    "B": ["bull", "el_primo", "jacky", "ash", "sam"],
+    "C": ["colt", "brock", "piper", "belle", "nani"]
+  }
+}

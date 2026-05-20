@@ -1,0 +1,10 @@
+[
+  { "id": "gem_grab",       "name": "젬 그랩",      "emoji": "💎", "maxBans": 6 },
+  { "id": "brawl_ball",    "name": "브롤 볼",      "emoji": "⚽", "maxBans": 6 },
+  { "id": "heist",         "name": "하이스트",      "emoji": "🏦", "maxBans": 6 },
+  { "id": "bounty",        "name": "바운티",        "emoji": "⭐", "maxBans": 6 },
+  { "id": "hot_zone",      "name": "핫 존",         "emoji": "🔥", "maxBans": 6 },
+  { "id": "knockout",      "name": "녹아웃",        "emoji": "🥊", "maxBans": 6 },
+  { "id": "wipeout",       "name": "와이프아웃",    "emoji": "💥", "maxBans": 6 },
+  { "id": "payload",       "name": "페이로드",      "emoji": "🚂", "maxBans": 6 }
+]
