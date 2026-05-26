@@ -20,9 +20,10 @@ const MODES = [
 interface Props {
   onSelectMode: (modeName: string) => void;
   onTierList: () => void;
+  onCompo: () => void;
 }
 
-export default function HomeScreen({ onSelectMode, onTierList }: Props) {
+export default function HomeScreen({ onSelectMode, onTierList, onCompo }: Props) {
   return (
     <SafeAreaView style={styles.safe}>
       <ScrollView contentContainerStyle={styles.content}>
@@ -44,14 +45,23 @@ export default function HomeScreen({ onSelectMode, onTierList }: Props) {
           ))}
         </View>
 
-        {/* 티어리스트 버튼 */}
-        <TouchableOpacity style={styles.tierBtn} onPress={onTierList} activeOpacity={0.75}>
-          <Text style={styles.tierBtnEmoji}>📊</Text>
-          <View>
-            <Text style={styles.tierBtnTitle}>티어리스트</Text>
-            <Text style={styles.tierBtnSub}>모드별 브롤러 강도 확인</Text>
-          </View>
-        </TouchableOpacity>
+        {/* 하단 버튼 행 */}
+        <View style={styles.bottomRow}>
+          <TouchableOpacity style={[styles.bottomBtn, { flex: 1, marginRight: 8 }]} onPress={onTierList} activeOpacity={0.75}>
+            <Text style={styles.bottomBtnEmoji}>📊</Text>
+            <View>
+              <Text style={styles.bottomBtnTitle}>티어리스트</Text>
+              <Text style={styles.bottomBtnSub}>브롤러 강도 확인</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.bottomBtn, { flex: 1 }]} onPress={onCompo} activeOpacity={0.75}>
+            <Text style={styles.bottomBtnEmoji}>🧪</Text>
+            <View>
+              <Text style={styles.bottomBtnTitle}>조합 테스트</Text>
+              <Text style={styles.bottomBtnSub}>조합 완성도 측정</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -76,18 +86,21 @@ const styles = StyleSheet.create({
   emoji: { fontSize: 38, marginBottom: 10 },
   name: { color: '#fff', fontSize: 15, fontWeight: '600' },
 
-  tierBtn: {
+  bottomRow: {
+    flexDirection: 'row',
+    marginTop: 6,
+  },
+  bottomBtn: {
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#0f3460',
     borderRadius: 14,
-    paddingVertical: 18,
-    paddingHorizontal: 22,
-    marginTop: 6,
+    paddingVertical: 16,
+    paddingHorizontal: 14,
     borderWidth: 1,
     borderColor: '#1a4a80',
   },
-  tierBtnEmoji: { fontSize: 34, marginRight: 16 },
-  tierBtnTitle: { color: '#fff', fontSize: 16, fontWeight: 'bold', marginBottom: 2 },
-  tierBtnSub:   { color: '#8899bb', fontSize: 12 },
+  bottomBtnEmoji: { fontSize: 28, marginRight: 10 },
+  bottomBtnTitle: { color: '#fff', fontSize: 14, fontWeight: 'bold', marginBottom: 2 },
+  bottomBtnSub:   { color: '#8899bb', fontSize: 11 },
 });
