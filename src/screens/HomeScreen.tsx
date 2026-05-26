@@ -19,14 +19,17 @@ const MODES = [
 
 interface Props {
   onSelectMode: (modeName: string) => void;
+  onTierList: () => void;
 }
 
-export default function HomeScreen({ onSelectMode }: Props) {
+export default function HomeScreen({ onSelectMode, onTierList }: Props) {
   return (
     <SafeAreaView style={styles.safe}>
       <ScrollView contentContainerStyle={styles.content}>
         <Text style={styles.title}>🎮 브롤 밴픽</Text>
         <Text style={styles.sub}>경쟁전 모드를 선택하세요</Text>
+
+        {/* 모드 그리드 */}
         <View style={styles.grid}>
           {MODES.map((mode) => (
             <TouchableOpacity
@@ -40,6 +43,15 @@ export default function HomeScreen({ onSelectMode }: Props) {
             </TouchableOpacity>
           ))}
         </View>
+
+        {/* 티어리스트 버튼 */}
+        <TouchableOpacity style={styles.tierBtn} onPress={onTierList} activeOpacity={0.75}>
+          <Text style={styles.tierBtnEmoji}>📊</Text>
+          <View>
+            <Text style={styles.tierBtnTitle}>티어리스트</Text>
+            <Text style={styles.tierBtnSub}>모드별 브롤러 강도 확인</Text>
+          </View>
+        </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
   );
@@ -63,4 +75,19 @@ const styles = StyleSheet.create({
   },
   emoji: { fontSize: 38, marginBottom: 10 },
   name: { color: '#fff', fontSize: 15, fontWeight: '600' },
+
+  tierBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#0f3460',
+    borderRadius: 14,
+    paddingVertical: 18,
+    paddingHorizontal: 22,
+    marginTop: 6,
+    borderWidth: 1,
+    borderColor: '#1a4a80',
+  },
+  tierBtnEmoji: { fontSize: 34, marginRight: 16 },
+  tierBtnTitle: { color: '#fff', fontSize: 16, fontWeight: 'bold', marginBottom: 2 },
+  tierBtnSub:   { color: '#8899bb', fontSize: 12 },
 });

@@ -6,6 +6,7 @@ import {
   ScrollView,
   StyleSheet,
   Text,
+  TextInput,
   TouchableOpacity,
   View,
 } from 'react-native';
@@ -13,7 +14,6 @@ import BRAWLER_DATA from '../data/brawler_data.json';
 
 // ─── 타입 ────────────────────────────────────────────────────────────────────
 type Team  = 'blue' | 'red';
-type Phase = 'ban'  | 'pick';
 type BrawlerState = 'available' | 'my_banned' | 'op_banned' | 'banned' | 'picked';
 
 interface BrawlerStat {
@@ -150,21 +150,8 @@ const RANGE     = new Set(['piper','belle','bea','nani','mandy','maisie','brock'
 const ASSASSINS = new Set(['mortis','edgar','fang','buzz','lily','mico','melody',
                            'stu','charlie','shade','kenji','kaze']);
 
-// ─── 밴픽 순서 ────────────────────────────────────────────────────────────────
-const SEQUENCE: { team: Team; phase: Phase }[] = [
-  { team: 'blue', phase: 'ban' },
-  { team: 'red',  phase: 'ban' },
-  { team: 'blue', phase: 'ban' },
-  { team: 'red',  phase: 'ban' },
-  { team: 'blue', phase: 'ban' },
-  { team: 'red',  phase: 'ban' },
-  { team: 'blue', phase: 'pick' },
-  { team: 'red',  phase: 'pick' },
-  { team: 'red',  phase: 'pick' },
-  { team: 'blue', phase: 'pick' },
-  { team: 'blue', phase: 'pick' },
-  { team: 'red',  phase: 'pick' },
-];
+// ─── 픽 순서 (1-2-2-1, 밴은 자유) ────────────────────────────────────────────
+const PICK_SEQ: Team[] = ['blue', 'red', 'red', 'blue', 'blue', 'red'];
 
 // ─── 모드 키 ──────────────────────────────────────────────────────────────────
 const MODE_KEY: Record<string, string> = {
@@ -481,15 +468,33 @@ interface TeamPanelProps {
   team: Team;
   bans: string[];
   picks: string[];
+  banMode: 'none' | 'blue' | 'red';
+  onBanToggle: () => void;
 }
 
-function TeamPanel({ team, bans, picks }: TeamPanelProps) {
-  const isBlue = team === 'blue';
-  const color  = isBlue ? '#64b5f6' : '#ef9a9a';
-  const border = isBlue ? '#2196F3' : '#f44336';
+function TeamPanel({ team, bans, picks, banMode, onBanToggle }: TeamPanelProps) {
+  const isBlue   = team === 'blue';
+  const color    = isBlue ? '#64b5f6' : '#ef9a9a';
+  const border   = isBlue ? '#2196F3' : '#f44336';
+  const isBanning   = banMode === team;
+  const otherBanning = banMode !== 'none' && !isBanning;
+  const canBan   = bans.length < 3;
+
   return (
     <View style={[s.teamPanel, { borderColor: border }]}>
-      <Text style={[s.teamTitle, { color }]}>{isBlue ? '🔵 블루팀' : '🔴 레드팀'}</Text>
+      <View style={s.teamTitleRow}>
+        <Text style={[s.teamTitle, { color }]}>{isBlue ? '🔵 블루팀' : '🔴 레드팀'}</Text>
+        {(canBan || isBanning) && !otherBanning && (
+          <TouchableOpacity
+            style={[s.banToggleBtn, isBanning && { backgroundColor: '#2e7d32' }]}
+            onPress={onBanToggle}
+          >
+            <Text style={s.banToggleText}>
+              {isBanning ? '✓ 완료' : `🚫 ${bans.length}/3`}
+            </Text>
+          </TouchableOpacity>
+        )}
+      </View>
 
       <Text style={s.sectionLabel}>밴</Text>
       {[0, 1, 2].map(i => (
@@ -525,20 +530,26 @@ export default function BanPickScreen({ mode, onBack }: Props) {
   const [redBans,   setRedBans]   = useState<string[]>([]);
   const [bluePicks, setBluePicks] = useState<string[]>([]);
   const [redPicks,  setRedPicks]  = useState<string[]>([]);
+  const [query,     setQuery]     = useState('');
+  const [banMode,   setBanMode]   = useState<'none' | 'blue' | 'red'>('none');
 
-  const isDone   = step >= SEQUENCE.length;
-  const current  = isDone ? null : SEQUENCE[step];
-  const modeKey  = MODE_KEY[mode] ?? 'gem_grab';
-  const advScore = calcAdvantage(bluePicks, redPicks, modeKey);
+  const isDone     = step >= PICK_SEQ.length;
+  const pickTeam   = isDone ? null : PICK_SEQ[step];
+  const modeKey    = MODE_KEY[mode] ?? 'gem_grab';
+  const advScore   = calcAdvantage(bluePicks, redPicks, modeKey);
   const hasAnyPick = bluePicks.length + redPicks.length > 0;
+
+  // 현재 유효 팀/페이즈 (밴 모드 우선)
+  const effTeam  = banMode !== 'none' ? banMode : pickTeam;
+  const effPhase = banMode !== 'none' ? 'ban' : 'pick';
 
   // ── 선택 가능 여부 ────────────────────────────────────────────────────────
   function isSelectable(id: string): boolean {
-    if (!current) return false;
-    if (current.phase === 'ban') {
-      const myBans = current.team === 'blue' ? blueBans : redBans;
+    if (banMode !== 'none') {
+      const myBans = banMode === 'blue' ? blueBans : redBans;
       return !myBans.includes(id);
     }
+    if (isDone || !pickTeam) return false;
     return (
       !blueBans.includes(id) && !redBans.includes(id) &&
       !bluePicks.includes(id) && !redPicks.includes(id)
@@ -546,26 +557,26 @@ export default function BanPickScreen({ mode, onBack }: Props) {
   }
 
   function getBrawlerState(id: string): BrawlerState {
-    if (!current) return 'banned';
-    if (current.phase === 'ban') {
-      const myBans = current.team === 'blue' ? blueBans : redBans;
-      const opBans = current.team === 'blue' ? redBans  : blueBans;
-      if (myBans.includes(id)) return 'my_banned';
-      if (opBans.includes(id)) return 'op_banned';
+    if (banMode !== 'none') {
+      const myBans = banMode === 'blue' ? blueBans : redBans;
+      const opBans = banMode === 'blue' ? redBans  : blueBans;
+      if (myBans.includes(id))  return 'my_banned';
+      if (opBans.includes(id))  return 'op_banned';
       return 'available';
     }
+    if (isDone) return 'banned';
     if (blueBans.includes(id) || redBans.includes(id)) return 'banned';
     if (bluePicks.includes(id) || redPicks.includes(id)) return 'picked';
     return 'available';
   }
 
   function getRecommendedIds(): Set<string> {
-    if (!current || isDone) return new Set();
-    const myPicks  = current.team === 'blue' ? bluePicks : redPicks;
-    const oppPicks = current.team === 'blue' ? redPicks  : bluePicks;
+    if (!effTeam) return new Set();
+    const myPicks  = effTeam === 'blue' ? bluePicks : redPicks;
+    const oppPicks = effTeam === 'blue' ? redPicks  : bluePicks;
     const candidates = BRAWLERS.filter(b => isSelectable(b.id));
 
-    if (current.phase === 'ban') {
+    if (effPhase === 'ban') {
       const scored = candidates.map(b => ({
         id: b.id,
         score: (DATA[b.id]?.tiers?.[modeKey] ?? 3) * 2.5
@@ -573,7 +584,6 @@ export default function BanPickScreen({ mode, onBack }: Props) {
       })).sort((a, b) => b.score - a.score);
       return new Set(scored.slice(0, 5).map(b => b.id));
     }
-
     const scored = candidates.map(b => {
       const tier    = (DATA[b.id]?.tiers?.[modeKey] ?? 3) * 2.5;
       const ctrs    = DATA[b.id]?.counters ?? [];
@@ -587,26 +597,49 @@ export default function BanPickScreen({ mode, onBack }: Props) {
   const recommendedIds = getRecommendedIds();
 
   function handleSelect(id: string) {
-    if (!current || !isSelectable(id)) return;
-    if (current.phase === 'ban') {
-      if (current.team === 'blue') setBlueBans(p => [...p, id]);
-      else setRedBans(p => [...p, id]);
-    } else {
-      if (current.team === 'blue') setBluePicks(p => [...p, id]);
-      else setRedPicks(p => [...p, id]);
+    if (!isSelectable(id)) return;
+    if (banMode !== 'none') {
+      if (banMode === 'blue') {
+        const next = [...blueBans, id];
+        setBlueBans(next);
+        if (next.length >= 3) setBanMode('none');
+      } else {
+        const next = [...redBans, id];
+        setRedBans(next);
+        if (next.length >= 3) setBanMode('none');
+      }
+      return;
     }
+    if (!pickTeam) return;
+    if (pickTeam === 'blue') setBluePicks(p => [...p, id]);
+    else                     setRedPicks(p => [...p, id]);
     setStep(s => s + 1);
+  }
+
+  function handleBanToggle(team: 'blue' | 'red') {
+    setBanMode(prev => prev === team ? 'none' : team);
   }
 
   function handleReset() {
     setStep(0); setBlueBans([]); setRedBans([]); setBluePicks([]); setRedPicks([]);
+    setQuery(''); setBanMode('none');
   }
 
-  const phaseColor = isDone ? '#2e7d32'
-    : current!.team === 'blue' ? '#1565C0' : '#c62828';
-  const phaseLabel = isDone
-    ? '✅ 밴픽 완료!'
-    : `${current!.team === 'blue' ? '🔵 블루팀' : '🔴 레드팀'} · ${current!.phase === 'ban' ? '밴' : '픽'} 선택  (${step + 1}/12)`;
+  const filteredBrawlers = query.trim()
+    ? BRAWLERS.filter(b => b.name.includes(query.trim()))
+    : BRAWLERS;
+
+  const phaseColor =
+    banMode === 'blue' ? '#0d3b6e' :
+    banMode === 'red'  ? '#6e0d0d' :
+    isDone             ? '#2e7d32' :
+    pickTeam === 'blue'? '#1565C0' : '#c62828';
+
+  const phaseLabel =
+    banMode === 'blue' ? `🔵 블루팀 밴 중 (${blueBans.length}/3) — 완료하려면 팀 패널의 ✓ 버튼` :
+    banMode === 'red'  ? `🔴 레드팀 밴 중 (${redBans.length}/3) — 완료하려면 팀 패널의 ✓ 버튼` :
+    isDone             ? '✅ 픽 완료!' :
+    `${pickTeam === 'blue' ? '🔵 블루팀' : '🔴 레드팀'} · 픽 선택  (${step + 1}/6)`;
 
   const btnMap: Record<BrawlerState, object[]> = {
     available: [s.bBtn],
@@ -638,8 +671,10 @@ export default function BanPickScreen({ mode, onBack }: Props) {
 
       {/* 팀 패널 */}
       <View style={s.teamsRow}>
-        <TeamPanel team="blue" bans={blueBans} picks={bluePicks} />
-        <TeamPanel team="red"  bans={redBans}  picks={redPicks} />
+        <TeamPanel team="blue" bans={blueBans} picks={bluePicks}
+          banMode={banMode} onBanToggle={() => handleBanToggle('blue')} />
+        <TeamPanel team="red"  bans={redBans}  picks={redPicks}
+          banMode={banMode} onBanToggle={() => handleBanToggle('red')} />
       </View>
 
       {/* 유불리 바 */}
@@ -650,6 +685,27 @@ export default function BanPickScreen({ mode, onBack }: Props) {
         <Text style={s.phaseText}>{phaseLabel}</Text>
       </View>
 
+      {/* 검색 바 */}
+      {!isDone && (
+        <View style={s.searchWrap}>
+          <Text style={s.searchIcon}>🔍</Text>
+          <TextInput
+            style={s.searchInput}
+            placeholder="브롤러 검색..."
+            placeholderTextColor="#556677"
+            value={query}
+            onChangeText={setQuery}
+            autoCorrect={false}
+            autoCapitalize="none"
+          />
+          {query.length > 0 && (
+            <TouchableOpacity onPress={() => setQuery('')} style={s.searchClear}>
+              <Text style={s.searchClearText}>✕</Text>
+            </TouchableOpacity>
+          )}
+        </View>
+      )}
+
       {/* 브롤러 그리드 or 총평 */}
       {isDone ? (
         <SummaryView
@@ -659,7 +715,7 @@ export default function BanPickScreen({ mode, onBack }: Props) {
         />
       ) : (
         <FlatList
-          data={BRAWLERS}
+          data={filteredBrawlers}
           numColumns={4}
           keyExtractor={item => item.id}
           renderItem={({ item }) => {
@@ -711,7 +767,13 @@ const s = StyleSheet.create({
     flex: 1, backgroundColor: '#0a2240', borderRadius: 8,
     padding: 7, borderWidth: 1.5, marginHorizontal: 3,
   },
-  teamTitle:    { fontWeight: 'bold', fontSize: 12, marginBottom: 4 },
+  teamTitleRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 4 },
+  teamTitle:    { fontWeight: 'bold', fontSize: 12 },
+  banToggleBtn: {
+    backgroundColor: '#7b1a1a', borderRadius: 5,
+    paddingHorizontal: 6, paddingVertical: 2,
+  },
+  banToggleText: { color: '#fff', fontSize: 10, fontWeight: 'bold' },
   sectionLabel: { color: '#556677', fontSize: 10, marginTop: 4, marginBottom: 2 },
   slot:         { borderRadius: 4, paddingVertical: 3, paddingHorizontal: 4, marginBottom: 2 },
   slotEmpty:    { backgroundColor: '#0d1e36' },
@@ -727,6 +789,21 @@ const s = StyleSheet.create({
     alignItems: 'center', marginBottom: 6,
   },
   phaseText: { color: '#fff', fontWeight: 'bold', fontSize: 13 },
+
+  searchWrap: {
+    flexDirection: 'row', alignItems: 'center',
+    backgroundColor: '#0a2240', borderRadius: 8,
+    marginHorizontal: 8, marginBottom: 6,
+    paddingHorizontal: 10, paddingVertical: 4,
+    borderWidth: 1, borderColor: '#1a3a5c',
+  },
+  searchIcon:  { fontSize: 14, marginRight: 6 },
+  searchInput: {
+    flex: 1, color: '#fff', fontSize: 13,
+    paddingVertical: 5,
+  },
+  searchClear:     { paddingHorizontal: 6, paddingVertical: 4 },
+  searchClearText: { color: '#556677', fontSize: 14 },
 
   grid: { paddingHorizontal: 6, paddingBottom: 20 },
   bBtn: {
